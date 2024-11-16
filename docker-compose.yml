@@ -16,8 +16,47 @@ services:
       - "8081:80" # Access backend at http://localhost:8081
     volumes:
       - ./backend:/var/www/html # Mount backend files to Apache's root directory
+    environment:
+      MYSQL_HOST: mysql # The service name of MySQL, used as the host to connect
+      MYSQL_PORT: 3306
+      MYSQL_DATABASE: CPWC
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
     networks:
       - webnet
+    depends_on:
+      - mysql # Ensure MySQL is started before backend
+
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: admin # Set your root password here
+      MYSQL_DATABASE: CPWC # Set your database name here (e.g., 'my_database')
+      MYSQL_USER: admin # Set your non-root username here (e.g., 'my_user')
+      MYSQL_PASSWORD: admin # Set your non-root user's password here (e.g., 'my_password')
+    volumes:
+      - mysql_data:/var/lib/mysql # Persistent storage for MySQL data
+    ports:
+      - "3306:3306" # MySQL port
+    networks:
+      - webnet # Ensure both MySQL and phpMyAdmin are on the same network
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_HOST: mysql # This should match the MySQL service name (which is 'mysql' in this case)
+      PMA_PORT: 3306 # Default MySQL port
+      MYSQL_ROOT_PASSWORD: admin # Make sure this matches the root password for MySQL
+    ports:
+      - "8082:80" # phpMyAdmin will be accessible at http://localhost:8082
+    networks:
+      - webnet # Same network as MySQL so they can communicate
+    depends_on:
+      - mysql # Make sure MySQL starts before phpMyAdmin
 
 networks:
   webnet:
+
+
+volumes:
+  mysql_data:
