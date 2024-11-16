@@ -193,18 +193,6 @@ input::placeholder {
     margin-right: auto; /* Centers horizontally */
 }
 
-.forgot-password {
-    display: block;
-    margin-top: 10px;
-    text-align: center;
-    color: #191970;
-    font-size: 0.9rem;
-    text-decoration: none;
-}
-
-.forgot-password:hover {
-    text-decoration: underline;
-}
 
 .image-container {
     flex: 1;
