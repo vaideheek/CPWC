@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Hub</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS file -->
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">THE HUB</div>
+        <div class="auth-links">
+            <a href="#">Sign Up Today</a>
+            <a href="#">Log In</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Connecting you to professional service providers near you</h1>
+        <div class="search-bar">
+            <select class="service-options" id="service-options">
+                <option disabled selected value="">Select a service</option>
+            </select>
+            <select class="location-options" id="location-options">
+                <option disabled selected value="">Choose a city</option>
+            </select>
+            <input type="date">
+            <button>Search</button>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+
+    <section class="services">
+        <h2>Services we provide</h2>
+        <div class="service-cards" id="service-cards"></div>
+    </section>
+
+    <!-- Sign-Up Section -->
+    <section class="signup-section">
+        <h3>Are You a Service Provider?</h3>
+        <p>Find out how The Hub can help your business.</p>
+        <a href="#">Sign Up Today</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>The HUB</p>
+        <p><a href="#" style="color: #ff4c29;">FAQs</a> | <a href="#" style="color: #ff4c29;">Terms and Conditions</a>
+        </p>
+        <p>© Copyright 2024 The HUB. All Rights Reserved</p>
+    </footer>
+
+    <!-- JavaScript to dynamically load services from JSON -->
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
