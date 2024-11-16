@@ -1,0 +1,179 @@
+/* css for the login form*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    padding: 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+header .logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+body {
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 120%;
+    max-width: 900px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.header {
+    background-color: #191970; /* Navy Blue */
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.header nav a.active {
+    text-decoration: underline;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+}
+
+.login-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-right: 20px;
+    border-right: 1px solid #ddd;
+}
+
+.social-login button {
+    background-color: ;
+    border: none;
+    margin: 10px 0;
+    padding: 10px 0px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.social-login button span {
+    margin-left: 5px;
+    font-size: 1.2rem;
+}
+
+form {
+    width: 100%;
+    max-width: 300px;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center; /* Center the text */
+}
+
+input::placeholder {
+    color: blue; /* Set the placeholder color to blue */
+}
+.password-field {
+    display: flex;
+    align-items: center;
+}
+
+.password-field input {
+    flex: 1;
+}
+
+.show-password {
+    background: none;
+    border: none;
+    color: #191970;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.action-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+
+.login-button {
+    width: 30%; /* Reduced width to half */
+    background-color: #ff4057;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+    display: block; /* Ensures the button stays centered */
+    margin-left: auto; /* Centers horizontally */
+    margin-right: auto; /* Centers horizontally */
+}
+
+.forgot-password {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    color: #191970;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container img {
+    max-width: 100%;
+    max-height: 300px;
+    border-radius: 10px;
+    object-fit: cover;
+}
