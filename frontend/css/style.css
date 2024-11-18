@@ -7,6 +7,9 @@
 
  body {
      font-family: Arial, sans-serif;
+     display: flex;
+     flex-direction: column;
+     min-height: 100vh;
  }
 
  a {
@@ -15,25 +18,55 @@
  }
 
  /* Header */
- header {
+ .header {
      display: flex;
      justify-content: space-between;
      align-items: center;
      padding: 1rem 2rem;
      background-color: #fff;
+     border-bottom: 1px solid #ddd;
  }
 
- header .logo {
-     font-weight: bold;
+ .logo {
      font-size: 1.5rem;
+     color: #000;
+     font-weight: bold;
  }
 
- header .auth-links {
-     font-size: 0.9rem;
+ .nav {
+     display: flex;
  }
 
- header .auth-links a {
-     margin-left: 1rem;
+ .nav-link {
+     color: #555;
+     margin-left: 1.7rem;
+     text-decoration: none;
+     font-size: 1rem;
+     position: relative;
+     padding-bottom: 5px;
+     transition: color 0.3s;
+ }
+
+
+ .nav-link:hover {
+     color: #2a2a72;
+
+ }
+
+ .container {
+     flex: 1;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding: 2rem;
+ }
+
+ .container {
+     flex: 1;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding: 2rem;
  }
 
  /* Hero Section */
@@ -66,10 +99,15 @@
  }
 
  .search-bar button {
-     background-color: #ff4c29;
+     background-color: #ff5a5f;
      color: #fff;
      cursor: pointer;
  }
+
+ .search-bar button:hover {
+     background-color: #fb4147;
+ }
+
 
  /* Services Section */
  .services {
@@ -132,12 +170,25 @@
      margin-top: 1rem;
  }
 
+ .signup-section a:hover {
+     color: #2742a3;
+     border: 2px solid #2742a3;
+ }
+
  /* Footer */
- footer {
+ .footer {
+     background-color: #fff;
+     padding: 1rem;
      text-align: center;
-     padding: 2rem;
-     background-color: #091540;
-     color: #fff;
+     font-size: 0.875rem;
+     color: #777;
+     border-top: 1px solid #ddd;
+ }
+
+ .footer a {
+     color: #777;
+     text-decoration: none;
+     margin: 0 0.5rem;
  }
 
  /* Responsive Styles */

@@ -47,3 +47,19 @@ document.addEventListener('DOMContentLoaded', () => {
     loadServices();
     loadLocations();
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    loadSection("header.html", "header-placeholder");
+    loadSection("footer.html", "footer-placeholder");
+});
+
+// Load footer and header to pages
+function loadSection(file, elementId) {
+    fetch(file)
+        .then((response) => response.text())
+        .then((data) => {
+            document.getElementById(elementId).innerHTML = data;
+        })
+        .catch((error) => console.error("Error loading section:", error));
+}
