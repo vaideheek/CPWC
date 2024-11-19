@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             }
         } elseif ($type === 'locations') {
             // Fetch unique locations
-            $query = "SELECT Location FROM ServiceProvider";
+            $query = "SELECT DISTINCT Location FROM ServiceProvider";
             $result = $conn->query($query);
 
             if ($result && $result->num_rows > 0) {
@@ -40,6 +40,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                 echo json_encode($locations);
             } else {
                 echo json_encode([]);  // Empty array if no locations are found
+            }
+        } elseif ($type === 'search' && isset($_GET['service']) && isset($_GET['location'])) {
+            // Search for services by type and location
+            $service = $_GET['service'];
+            $location = $_GET['location'];
+
+            $query = "SELECT s.*, sp.*
+            FROM Service s
+            JOIN ServiceProvider sp ON s.ProviderID = sp.UserID
+            WHERE sp.ServiceType = '$service' AND sp.Location = '$location' AND s.Status = 'Active'";
+            $result = $conn->query($query);
+
+            if ($result && $result->num_rows > 0) {
+                $services = [];
+                while ($row = $result->fetch_assoc()) {
+                    $services[] = $row; // Collect service details
+                }
+                echo json_encode($services);
+            } else {
+                echo json_encode([]); // No services found
             }
         } else {
             echo json_encode(['error' => 'Invalid type parameter']);
