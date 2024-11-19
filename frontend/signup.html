@@ -27,29 +27,26 @@
         <button class="social-btn"><i class="fa fa-facebook-f"></i></button>
         <button class="social-btn"><i class="fa fa-google"></i></button>
       </div>
-      <form id="signup-form">
+      <form id="signup-form" action="../backend/src/signup.php" method="POST">
         <div class="form-group">
-          <input type="email" id="email" placeholder="Email" required>
+          <input type="email" id="email" name="email" placeholder="Email" required>
         </div>
         <div class="form-group">
-          <input title="Password must have at least 10 characters, one letter, one number, and one special character."
-            type="password" id="password" placeholder="Password" required>
+          <input type="password" id="password" name="password" placeholder="Password" required>
           <button type="button" class="show-password">Show</button>
         </div>
-
-
         <div class="form-group">
-          <input type="password" id="confirm-password" placeholder="Re-enter Password" required>
+          <input type="password" id="confirm-password" name="confirm-password" placeholder="Re-enter Password" required>
           <button type="button" class="show-password">Show</button>
         </div>
         <div class="form-group service-provider">
-
           <label for="service-provider-checkbox">Sign Up as a Service Provider </label>
-          <input type="checkbox" id="service-provider-checkbox">
+          <input type="checkbox" id="service-provider-checkbox" name="service-provider">
         </div>
         <div class="form-group" id="tax-number-group" style="display: none;">
-          <input type="text" id="tax-number" placeholder="Tax Number">
-        </div>
+          <input type="text" id="tax-number" name="taxID" placeholder="Tax Number">
+        </div>        
+        <input type="hidden" id="role" name="role" value="Customer"> <!-- Hidden role field -->
         <button type="submit" class="submit-btn">Sign Up</button>
       </form>
     </div>
