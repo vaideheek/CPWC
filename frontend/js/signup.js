@@ -22,3 +22,16 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+
+function validatePassword(password) {
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{10,}$/;
+
+    if (passwordRegex.test(password)) {
+        console.log("Password is valid.");
+        return true;
+    } else {
+        console.log("Password must have at least 10 characters, one letter, one number, and one special character.");
+        return false;
+    }
+}
