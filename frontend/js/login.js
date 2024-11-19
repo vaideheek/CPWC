@@ -15,3 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+document.getElementById('login-form').onsubmit = function() {
+    console.log('Form submitted!');
+};
