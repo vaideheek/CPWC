@@ -1,0 +1,284 @@
+/* General styles from your signup.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 60px;
+}
+
+.header {
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+
+}
+
+
+a {
+    text-decoration: none;
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: #000;
+    font-weight: bold;
+}
+
+.nav {
+    display: flex;
+}
+
+.nav-link {
+    color: #555;
+    margin-left: 1.5rem;
+    text-decoration: none;
+    font-size: 1rem;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s;
+}
+
+.nav-link.active {
+    color: #2a2a72;
+    font-weight: bold;
+}
+
+.nav-link.active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: #ff5a5f;
+    border-radius: 2px;
+}
+
+.nav-link:hover {
+    color: #2a2a72;
+}
+
+.container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.form-box {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+h2 {
+    color: #2a2a72;
+    margin-bottom: 1.5rem;
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+.social-signup {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.social-btn {
+    background-color: #2a2a72;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 48%;
+    font-size: 0.9rem;
+    padding-right: 2rem;
+    transition: background-color 0.3s;
+}
+
+.social-btn:hover {
+    background-color: #ff5a5f;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.show-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.submit-btn {
+    background-color: #2a2a72;
+    color: #fff;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+    margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    background-color: #ff5a5f;
+}
+
+.forgot-password {
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.footer {
+    background-color: #fff;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: #777;
+    border-top: 1px solid #ddd;
+}
+
+.footer a {
+    color: #777;
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+
+@media (max-width: 500px) {
+    .form-box {
+        padding: 1rem;
+    }
+}
+
+.booking-container {
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+.page-title {
+    font-size: 1.75rem;
+    color: #2a2a72;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.booking-box {
+    text-align: left;
+    background-color: #fff;
+
+}
+
+.service-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.service-details {
+    margin-bottom: 1rem;
+}
+
+.service-name {
+    font-size: 1.5rem;
+    color: #2a2a72;
+    margin-bottom: 0.5rem;
+}
+
+.service-description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.provider-info {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
+.provider-info h4 {
+    font-size: 1.2rem;
+    color: #2a2a72;
+    margin-bottom: 0.5rem;
+}
+
+.submit-btn {
+    background-color: #2a2a72;
+    color: #fff;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #ff5a5f;
+}
+
+@media (max-width: 768px) {
+    .booking-container {
+        padding: 1rem;
+    }
+}

@@ -11,15 +11,22 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    padding-top: 60px;
 }
 
 .header {
+    position: sticky;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
     background-color: #fff;
     border-bottom: 1px solid #ddd;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+
 }
 
 a {

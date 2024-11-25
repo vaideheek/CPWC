@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment | The Hub</title>
+    <link rel="stylesheet" href="css/payment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body onload="showRedirectLoading()">
+
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <p>Redirecting to payment page...</p>
+    </div>
+
+    <!-- Main Content -->
+    <div id="content" class="hidden">
+        <!-- Header -->
+        <header class="header">
+            <a href="./">
+                <h1 class="logo">THE HUB</h1>
+            </a>
+            <nav class="nav">
+                <a href="./profile.html" class="nav-link">Profile</a>
+                <a href="./logout.html" class="nav-link">Log Out</a>
+            </nav>
+        </header>
+
+        <!-- Payment Box -->
+        <main class="container">
+            <div class="payment-box">
+                <h2>Payment</h2>
+                <form id="payment-form" onsubmit="processPayment(event)">
+                    <div class="form-group">
+                        <label for="card-number">Card Number</label>
+                        <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="card-name">Name on Card</label>
+                        <input type="text" id="card-name" name="card-name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group half-width">
+                            <label for="expiration-date">Expiration Date</label>
+                            <input type="text" id="expiration-date" name="expiration-date" placeholder="MM/YY" required>
+                        </div>
+                        <div class="form-group half-width">
+                            <label for="cvv">CVV</label>
+                            <input type="text" id="cvv" name="cvv" placeholder="123" required>
+                        </div>
+                    </div>
+
+                    <!-- Payment Options -->
+                    <div class="payment-options">
+                        <h3>Other Payment Options</h3>
+                        <button type="button" class="payment-btn apple-pay"><i class="fa fa-apple"></i> Apple
+                            Pay</button>
+                        <button type="button" class="payment-btn google-pay"><i class="fa fa-google"></i> Google
+                            Pay</button>
+                        <button type="button" class="payment-btn paypal"><i class="fa fa-paypal"></i> PayPal</button>
+                    </div>
+
+                    <!-- Pay Button -->
+                    <button type="submit" class="submit-btn pay-btn">Pay</button>
+                </form>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>The HUB | <a href="#">FAQs</a> | <a href="#">Terms and Conditions</a></p>
+            <p>&copy; Copyright 2024 The HUB. All Rights Reserved</p>
+        </footer>
+    </div>
+
+
+
+    <script>
+        function showRedirectLoading() {
+            // Show loading screen for redirect
+            const loadingScreen = document.getElementById('loading-screen');
+            const content = document.getElementById('content');
+            loadingScreen.style.display = 'flex';
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+                content.classList.remove('hidden');
+            }, 2000); // 2 seconds delay before showing the main content
+        }
+
+    </script>
+</body>
+
+</html>
