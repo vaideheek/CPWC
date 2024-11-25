@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password | The Hub</title>
+    <link rel="stylesheet" href="css/fpwd.css">
+</head>
+
+<body>
+    <header class="header">
+        <a href="./">
+            <h1 class="logo">THE HUB</h1>
+        </a>
+        <nav class="nav">
+            <a href="./login.html" class="nav-link">Log In</a>
+            <a href="./signup.html" class="nav-link">Sign Up</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="form-box">
+            <h2>Reset Your Password</h2>
+            <p>Enter your email address to receive a password reset link.</p>
+            <form id="forgotpwd-form">
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+                <button type="submit" class="submit-btn">Send Reset Link</button>
+            </form>
+            <p class="message">A reset link will be sent to your email address.</p>
+            <a href="./login.html" class="back-to-login">Back to Log In</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>The HUB | <a href="#">FAQs</a> | <a href="#">Terms and Conditions</a></p>
+        <p>&copy; Copyright 2024 The HUB. All Rights Reserved</p>
+    </footer>
+
+    <script src="js/forgotpwd.js"></script>
+</body>
+
+</html>

@@ -3,7 +3,8 @@
 include '../db_connect.php';
 
 // Function to sanitize input
-function sanitizeInput($data) {
+function sanitizeInput($data)
+{
     return htmlspecialchars(stripslashes(trim($data)));
 }
 
@@ -45,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Prepare SQL to insert new user
     $sql = "INSERT INTO User (Email, Password, Role, TaxID) VALUES (?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
-    
+
     // Bind parameters
     if ($role == 'Provider') {
         $stmt->bind_param("ssss", $email, $hashedPassword, $role, $taxID);
@@ -58,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($stmt->execute()) {
         echo "Registration successful!";
         // Redirect to login page or index
-        header("Location: /CPWC/CPWC/frontend/login.html"); // Change this to your login page
+        header("Location: /CPWC/frontend/login.html"); // Change this to your login page
         exit();
     } else {
         echo "Error: " . $stmt->error;
@@ -68,4 +69,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 $conn->close();
-?>
