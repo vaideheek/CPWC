@@ -24,8 +24,8 @@
     <div class="form-box">
       <h2>Create account</h2>
       <div class="social-signup">
-        <button class="social-btn"><i class="fa fa-facebook-f"></i></button>
-        <button class="social-btn"><i class="fa fa-google"></i></button>
+        <button class="social-btn"><i class="fa fa-facebook-f"></i> Sign Up with Facebook</button>
+        <button class="social-btn"><i class="fa fa-google"></i> Sign Up with Google</button>
       </div>
       <form id="signup-form" action="../backend/src/signup.php" method="POST">
         <div class="form-group">
@@ -45,7 +45,7 @@
         </div>
         <div class="form-group" id="tax-number-group" style="display: none;">
           <input type="text" id="tax-number" name="taxID" placeholder="Tax Number">
-        </div>        
+        </div>
         <input type="hidden" id="role" name="role" value="Customer"> <!-- Hidden role field -->
         <button type="submit" class="submit-btn">Sign Up</button>
       </form>
