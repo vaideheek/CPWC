@@ -1,0 +1,122 @@
+/* General styles from your signup.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+a {
+    text-decoration: none;
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: #000;
+    font-weight: bold;
+}
+
+.nav {
+    display: flex;
+}
+
+.nav-link {
+    color: #555;
+    margin-left: 1.5rem;
+    text-decoration: none;
+    font-size: 1rem;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s;
+}
+
+.nav-link.active {
+    color: #2a2a72;
+    font-weight: bold;
+}
+
+.nav-link.active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: #ff5a5f;
+    border-radius: 2px;
+}
+
+.nav-link:hover {
+    color: #2a2a72;
+}
+
+/* Loading Screen */
+.loading-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000;
+    color: #fff;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+
+/* Confirmation Content */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.confirmation-box h2 {
+    color: #4caf50;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.confirmation-box p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.success-gif {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.footer {
+    background-color: #091540;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: white;
+    border-top: 1px solid #ddd;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 0.5rem;
+}

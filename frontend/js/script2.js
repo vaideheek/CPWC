@@ -74,7 +74,7 @@ async function searchServices() {
         }
         const results = await response.json();
 
-        const serviceCards = document.getElementById('service-cards');
+        const serviceCards = document.getElementById('service-cards-provided');
         serviceCards.innerHTML = ''; // Clear previous results
 
         if (results.length === 0) {
@@ -85,13 +85,15 @@ async function searchServices() {
         // Display search results as service cards
         results.forEach(result => {
             const card = document.createElement('div');
-            card.className = 'service-card';
+            card.className = 'servives-provided';
             card.innerHTML = `
                 <h3>${result.Title}</h3>
                 <p>${result.Description}</p>
                 <p><strong>Price:</strong> $${result.Price}</p>
                 <p><strong>Duration:</strong> ${result.Duration} minutes</p>
+                <a href="booking.html">
                 <button onclick="bookService(${result.ServiceID})">Book Now</button>
+                </a>
             `;
             serviceCards.appendChild(card);
         });

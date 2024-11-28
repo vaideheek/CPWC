@@ -138,16 +138,16 @@ input[type="email"] {
 }
 
 .footer {
-    background-color: #fff;
+    background-color: #091540;
     padding: 1rem;
     text-align: center;
     font-size: 0.875rem;
-    color: #777;
+    color: white;
     border-top: 1px solid #ddd;
 }
 
 .footer a {
-    color: #777;
+    color: white;
     text-decoration: none;
     margin: 0 0.5rem;
 }

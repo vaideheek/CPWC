@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation | The Hub</title>
+    <link rel="stylesheet" href="css/confirmation.css">
+</head>
+
+<body onload="showProcessingLoading()">
+
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <p>Processing your payment...</p>
+    </div>
+
+    <!-- Main Content -->
+    <div id="content" class="hidden">
+        <!-- Header -->
+        <header class="header">
+            <a href="index.html">
+                <h1 class="logo">THE HUB</h1>
+            </a>
+            <nav class="nav">
+                <a href="./profile.html" class="nav-link">Profile</a>
+                <a href="./index.html" class="nav-link">Log Out</a>
+            </nav>
+        </header>
+
+        <!-- Confirmation Box -->
+        <main class="container">
+            <div class="confirmation-box">
+                <h2>Payment Successful!</h2>
+                <p>Thank you for your payment. Your transaction is complete.</p>
+                <img src="https://www.icegif.com/wp-content/uploads/2023/08/icegif-727.gif" alt="Success GIF"
+                    class="success-gif">
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>The HUB | <a href="faq.html">FAQs</a> | <a href="#">Terms and Conditions</a></p>
+            <p>&copy; Copyright 2024 The HUB. All Rights Reserved</p>
+        </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        function showProcessingLoading() {
+            // Show loading screen
+            const loadingScreen = document.getElementById('loading-screen');
+            const content = document.getElementById('content');
+            loadingScreen.style.display = 'flex';
+
+            setTimeout(() => {
+                // Hide loading screen and show main content
+                loadingScreen.style.display = 'none';
+                content.classList.remove('hidden');
+            }, 2000); // 3 seconds delay
+        }
+    </script>
+
+</body>
+
+</html>

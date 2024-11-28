@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs</title>
+    <link rel="stylesheet" href="css/faq.css">
+    <style>
+        /* FAQ container styles */
+        .faq-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .faq-title {
+            font-size: 2rem;
+            color: #2a2a72;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        /* Question styles */
+        .faq-item {
+            border-bottom: 1px solid #ddd;
+            padding: 15px 0;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        .faq-question:hover {
+            color: #2a2a72;
+        }
+
+        .faq-question i {
+            transition: transform 0.3s;
+        }
+
+        .faq-question.active i {
+            transform: rotate(180deg);
+        }
+
+        /* Answer styles */
+        .faq-answer {
+            display: none;
+            padding: 10px 0;
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .footer {
+            background-color: #fff;
+            padding: 1rem;
+            text-align: center;
+            font-size: 0.875rem;
+            color: #777;
+            border-top: 1px solid #ddd;
+        }
+
+        .footer a {
+            color: #777;
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            color: #000;
+            font-weight: bold;
+        }
+
+        .nav {
+            display: flex;
+        }
+
+        .nav-link {
+            color: #555;
+            margin-left: 1.5rem;
+            text-decoration: none;
+            font-size: 1rem;
+            position: relative;
+            padding-bottom: 5px;
+            transition: color 0.3s;
+        }
+
+        .nav-link.active {
+            color: #2a2a72;
+            font-weight: bold;
+        }
+
+        .nav-link.active::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background-color: #ff5a5f;
+            border-radius: 2px;
+        }
+
+        .nav-link:hover {
+            color: #2a2a72;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <h1 class="logo">THE HUB</h1>
+        <nav class="nav">
+            <a href="./login.html" class="nav-link">Log In</a>
+            <a href="./signup.html" class="nav-link active">Sign Up</a>
+        </nav>
+    </header>
+    <div class="faq-container">
+        <h1 class="faq-title">Frequently Asked Questions</h1>
+
+        <h1>For Customers</h1>
+        <h2>Registration and log in</h2>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Can I use the site without a registration?</span>
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Yes, you can browse the services without registration, but to book a service or to contact a Service
+                    Provider registration is required.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>How do I register on the platform?</span>
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Click on "Sign Up Today" at the top of the home page, enter your details (email and password), and
+                    verify your e-mail to start using the platform.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>I registered as a customer, but I want to be a Service Provider. How can I become one?</span>
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>If you go to the "Profile Settings", there is a section where you can provide your TAX number, which
+                    will automatically make you a Service Provider, and you will see all the functionalities connected
+                    to that role.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>I am unable to log in. What can I do?</span>
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>If you forgot your password, click on "Forgot Password" on the Login page. Enter the e-mail address
+                    you have signed up with, and we will send you a new password via e-mail. Afterwards we advise you to
+                    change that password in "Profile Settings".</p>
+            </div>
+        </div>
+
+        <h2>Searching and booking services</h2>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>How do I search for a Service Provider?</span>
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Use Our home page to filter by service, location, and date and time.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>How do I book a Service Provider?</span>
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>After you have found a suitable service for your needs, click "Book Now" on the service’s site, and
+                    confirm the booking by clicking "Proceed to pay", and pay with the payment method of your choice.
+                </p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Can I cancel an appointment? How far in advance can I do it?</span>
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Yes, you can cancel an appointment. However, Service Providers may charge a cancellation fee
+                    (depending on their policies) if you cancel within 24 hours of the scheduled time.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Can I reschedule my appointment?</span>
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Yes, you can reschedule by accessing "My Bookings" and selecting a new available time slot. Your
+                    Service Provider will be notified immediately.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Can I see past bookings?</span>
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Yes, all completed bookings can be accessed under "My Bookings."</p>
+            </div>
+        </div>
+
+        <h2>Payments</h2>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>How much does it cost to use the site as a customer?</span>
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Using the site as a customer is free. You only pay for the services you book.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Can I pay after the service is done?</span>
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>No, payments are made at the time of booking to secure your appointment.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>What payment methods are accepted?</span>
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>We accept major credit cards, Google Pay, and Apple Pay.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Can I get a refund if I cancel my appointment?</span>
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Refund policies depend on the Service Provider and the timing of your cancellation. Read the
+                    Provider’s profile for more details.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Are there any fees for canceling an appointment?</span>
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Some Service Providers may apply a cancellation fee if you cancel within 24 hours of the appointment.
+                    The cancellation policy will be shown at booking.</p>
+            </div>
+        </div>
+
+        <h2>Security and reliability</h2>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Are my payment details secure?</span>
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Yes, we use encrypted payment gateways compliant with EU regulations.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Will my information be shared with third parties?</span>
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>No, your information is kept private and secure, per GDPR standards.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>How do I know the Service Provider is reliable?</span>
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Check their ratings and customer reviews.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>What if the Service Provider does something wrong or damages my property? What can I do?</span>
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Contact the Service Provider directly to discuss the issue. If further assistance is needed, contact
+                    Customer Support for guidance (at akos1106@mailbox.unideb.hu).</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Is there a warranty period after the service is completed?</span>
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Warranty periods vary by Service Provider, so it’s best to ask your Provider about any guarantees on
+                    their service prior to booking.</p>
+            </div>
+        </div>
+
+        <h2>Communication and notifications</h2>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Will I receive confirmation for my booking?</span>
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Yes, you will receive e-mail confirmation with the booking details.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Can I get notifications on my phone?</span>
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>No, at the moment we only send notifications through e-mails.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>How can I contact my Service Provider?</span>
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>You can call or e-mail the Service Provider directly through the contact information they have
+                    provided.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>How can I contact Customer Support?</span>
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Go to "Contact Us" on the website to reach our Customer Support team via e-mail (at
+                    akos1106@mailbox.unideb.hu).</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Will the Service Provider bring their own tools and materials needed for the service?</span>
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Most Service Providers provide their own tools, but if specific materials are needed, confirm details
+                    with them through their provided contact information before the appointment.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Can I leave a review after the service?</span>
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Yes, customers are invited to leave reviews after the service is completed.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>What happens if the Service Provider cancels my appointment?</span>
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>You’ll be notified immediately, and you can reschedule or book another provider (in this case you
+                    will be refunded based on the refund policies of the Service Provider). </p>
+            </div>
+        </div>
+
+
+
+        <h1>For Service Providers</h1>
+        <h2>Registration and profile management</h2>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>How do I register as a Service Provider on the platform?</span>
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Click on "Sign Up" and select the "Sign Up as a Service Provider" option to create your account as a
+                    Service Provider, by entering your TAX Number.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>What information should I include in my profile?</span>
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Include a short description about yourself and the services you do, and photos of your previous
+                    works.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Can I list multiple services?</span>
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Yes, you can add each service individually, complete with unique pricing and descriptions.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Can I add photos to my service listings?</span>
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Yes, upload photos to showcase your work and attract more customers.</p>
+            </div>
+        </div>
+
+        <h2>Availability and booking management</h2>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>How can I set my availability?</span>
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Use the calendar tool on your dashboard to set or update your available hours.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Can I manage my bookings through the platform?</span>
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Yes, you can view, reschedule, or cancel bookings through the provider dashboard.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Can I block off time for vacations or unavailability?</span>
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Yes, you can easily block off specific dates or times in your availability settings.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Can I cancel my appointment? How far in advance can I do it?</span>
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Yes, you can cancel an appointment through the platform. It’s recommended to do so as early as
+                    possible to minimize the impact on customers.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Are there any consequences if I cancel or reschedule my appointments repeatedly?</span>
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Frequent cancellations may impact your reputation on the platform. Avoid cancellations to maintain
+                    good standing.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Can I decline a job if I don’t feel qualified enough for it?</span>
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Yes, it’s best for both parties to decline jobs that are outside your expertise to maintain quality
+                    and customer satisfaction. Your client will get a full refund.</p>
+            </div>
+        </div>
+
+        <h2>Payments and fees<h2>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is the site free to use?</span>
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Registration to the site is free as a Service Provider, but we take a 10% cut from every
+                            booking you make through our site.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do I get paid for my services?</span>
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Payments are processed securely and transferred to the bank account you provided.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How often are payments processed?</span>
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Payments are processed after the service is completed, and you will see the money in your
+                            bank account about 1-2 hours after the customer has paid through our system.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I get the invoices of the fees I pay with each booking?</span>
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, invoices for the platform fees are available in your account under “Billing”.</p>
+                    </div>
+                </div>
+
+                <h2>Communication and customer interaction</h2>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do I receive notifications about new bookings?</span>
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Through e-mail notifications.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can customers contact me outside of this site?</span>
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, through the phone number and e-mail address you have provided your customers can
+                            contact you.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I communicate with customers before appointments?</span>
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, if the potential future customers have contacted you through your phone number,
+                            e-mail address, feel free to answer their questions before they commit to hire You
+                            as their Service Provider.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How can I contact the customer who hired me on the site?</span>
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Use either the phone number or e-mail address (based on which contact information the
+                            Customer has provided us with) which you can see in your email notification of the
+                            booking to communicate with customers regarding job specifics.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do I respond to customer reviews?</span>
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Go to your reviews section to respond to feedback.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can negative feedback be deleted from my profile if I think it isn’t fair?</span>
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>If you feel like a feedback is unfair or violates guidelines, you can flag it for
+                            review by the platform’s support team. We will contact both you and the customer for
+                            further information and based on that, we will either ask the customer to edit the
+                            feedback, or leave it as is.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do I report inappropriate reviews?</span>
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Flag any reviews that violate guidelines, and the Customer Support team will review
+                            them.</p>
+                    </div>
+                </div>
+
+                <h2>Policies and cancellations</h2>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do I handle customer cancellations?</span>
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You’ll receive a notification via e-mail, and the booking status will update
+                            automatically on our site.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I set custom cancellation policies?</span>
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, define your policies in the settings for customers to view before
+                            booking.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What happens if I accidentally damage the customer's property?</span>
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Immediately inform the customer and discuss any necessary actions. If needed,
+                            contact Customer Support for assistance.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do I need insurance to offer services?</span>
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>It’s recommended, but requirements depend on local regulations.</p>
+                    </div>
+                </div>
+
+
+                <h1>For everyone</h1>
+                <h2>Support and technical issues</h2>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>I can’t log in. What can I do?</span>
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Click "Forgot Password" to reset your password. We will send you a
+                            new password to the e-mail address you provide. If the issue
+                            persists, contact customer support for assistance.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do I contact Customer Support?</span>
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Go to "Contact Us" on the website to reach our Customer Support team
+                            via e-mail (at akos1106@mailbox.unideb.hu).</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is customer support available 24/7?</span>
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we will reply to your e-mails within 20-30 minutes.</p>
+                    </div>
+                </div>
+
+                <h2>Account and personal information</h2>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How is my personal information protected?</span>
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We follow GDPR guidelines and use data encryption to keep your
+                            information safe and secure.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How can I update my contact information or address?</span>
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Go to "Profile Settings" to update your contact information and other
+                            personal details.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How can I delete my account? What happens to my data if I do
+                            so?</span>
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can delete your account in "Profile Settings". All personal data
+                            will be permanently removed from our servers following GDPR
+                            guidelines, within the next 7 days.</p>
+                    </div>
+                </div>
+
+                <script>
+                    // JavaScript to toggle the display of answers
+                    document.querySelectorAll('.faq-question').forEach(item => {
+                        item.addEventListener('click', () => {
+                            // Toggle the active class for the arrow rotation
+                            item.classList.toggle('active');
+
+                            // Toggle the visibility of the answer
+                            const answer = item.nextElementSibling;
+                            answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+                        });
+                    });
+                </script>
+
+                <!-- Font Awesome for the chevron icon -->
+                <link rel="stylesheet"
+                    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+                <footer class="footer">
+                    <p>The HUB | <a href="#">FAQs</a> | <a href="#">Terms and Conditions</a></p>
+                    <p>&copy; Copyright 2024 The HUB. All Rights Reserved</p>
+                </footer>
+</body>
+
+</html>
