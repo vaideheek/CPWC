@@ -165,106 +165,117 @@ a {
 
 /* Hover Effect */
 .service-card:hover .service-title {
-    background: rgba(18, 17, 17, 0.8);  /* Darken the title background on hover */
+    background: rgba(18, 17, 17, 0.8);
+    /* Darken the title background on hover */
 }
 
-/* Search Results Section */
-.search-results {
-    padding: 2rem;
-    text-align: center;
+/* General styles for the search results container */
+#search-results {
+    margin: 20px auto;
+    padding: 10px;
+    max-width: 1200px;
 }
 
-.search-results h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    color: #091540;
-    font-weight: bold;
+#search-results-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-/* Individual Service Card */
+/* Styles for individual result cards */
 .search-result-card {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
     background-color: #fff;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.search-result-card .profile-img {
-    width: 80px;
-    height: 80px;
+/* Profile picture styles */
+.search-result-image img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
     border-radius: 50%;
-    margin-right: 1rem;
+    border: 2px solid #ccc;
 }
 
-.search-result-card .service-details {
-    flex: 1;
+/* Details container on the right */
+.search-result-details {
+    flex-grow: 1;
+    /* Makes this section take up remaining space */
 }
 
-.search-result-card .service-title {
-    font-size: 1.5rem;
+/* Title styles */
+.search-result-title {
+    font-size: 1.2rem;
     font-weight: bold;
-    color: #091540;
-    margin-bottom: 0.5rem;
+    margin: 0 0 10px;
 }
 
-.search-result-card .service-description {
-    font-size: 1rem;
+/* Description and other information styles */
+.search-result-description {
+    margin: 0 0 5px;
     color: #555;
-    margin-bottom: 1rem;
+    font-size: 0.95rem;
 }
 
-.search-result-card .service-price {
-    font-size: 1.1rem;
+.search-result-price {
+    color: #000000;
     font-weight: bold;
-    color: #FF5A5F;
+    margin: 0 0 5px;
 }
 
-.search-result-card .location {
-    font-size: 1rem;
-    color: #777;
-    margin-top: 0.5rem;
-}
-
-.search-result-card .rating {
-    font-size: 1.1rem;
-    color: #FFB400;
-    font-weight: bold;
-}
-
-.search-result-card .rating span {
+.search-result-location,
+.search-result-rating {
+    margin: 0 0 5px;
     font-size: 0.9rem;
-    color: #777;
+    color: #666;
 }
 
-@media (max-width: 768px) {
-    .search-result-card {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .search-result-card .profile-img {
-        margin-bottom: 1rem;
-    }
+/* "Book Now" button */
+.search-result-card a button {
+    background-color: #2a2a72;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
+
+.search-result-card a button:hover {
+    background-color: #ff5a5f;
+}
+
 .stars {
     color: #f39c12;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
+/* Ensure responsiveness */
+@media screen and (max-width: 768px) {
     .search-result-card {
         flex-direction: column;
-        text-align: center;
+        /* Stack content on smaller screens */
+        align-items: flex-start;
     }
 
-    .search-result-image {
-        margin-bottom: 1rem;
+    .search-result-image img {
+        margin-bottom: 10px;
+    }
+
+    .search-result-card a button {
+        width: 100%;
+        /* Button takes full width */
     }
 }
+
+
+
 
 /* Sign-Up Section */
 .signup-section {

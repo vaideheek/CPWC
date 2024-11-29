@@ -14,7 +14,7 @@ async function loadServiceDropdown() {
     try {
         const response = await fetchData('services'); // Fetch services from the backend
         const serviceDropdown = document.getElementById('service-options');
-        
+
         // Ensure the "Any Service" option always exists at the start
         serviceDropdown.innerHTML = `<option value="Any Service" selected>Any Service</option>`; // Default option
 
@@ -43,7 +43,7 @@ const locations = [
 async function loadLocations() {
     try {
         const locationDropdown = document.getElementById('location-options');
-        
+
         // Ensure the "Any Location" option always exists at the start
         locationDropdown.innerHTML = `<option value="Any Location" selected>Any Location</option>`; // Default option
 
@@ -60,7 +60,11 @@ async function loadLocations() {
 }
 
 
-
+// Save the service data in localStorage when a service is selected
+function saveServiceData(service) {
+    console.log('Saving service:', service);
+    localStorage.setItem('selectedService', JSON.stringify(service));
+}
 
 // Function to search for services based on user input
 async function searchServices() {
@@ -90,16 +94,31 @@ async function searchServices() {
                 card.className = 'search-result-card';
                 card.innerHTML = `
                     <div class="search-result-image">
-                        <img src="default-profile.jpg" alt="${result.Title}" /> <!-- Placeholder for profile picture -->
+                        <img src="media/avatar.jpeg" alt="${result.Title}" /> <!-- Placeholder for profile picture -->
                     </div>
                     <div class="search-result-details">
                         <h3 class="search-result-title">${result.Title}</h3>
                         <p class="search-result-description">${result.Description}</p>
                         <p class="search-result-price">HUF ${result.Price}</p>
                         <p class="search-result-location">${result.Location}</p>
-                        <p class="search-result-rating">Rating: ${result.Rating || 'N/A'} <span class="stars">${'★'.repeat(result.Rating || 0)}</span></p>
-                    </div>
-                `;
+                        <p class="search-result-rating">Rating: ${result.Rating || 'N/A'} <span class="stars">${'★'.repeat(result.Rating || 0)}</span></p >
+                    </div >
+                    `;
+                const button = document.createElement('button');
+                button.textContent = 'Book Now';
+
+                // Create the <a> tag
+                const link = document.createElement('a');
+                link.href = "booking.html";  // Or set this to the desired URL (e.g., 'booking.html')
+
+                button.addEventListener('click', () => {
+                    saveServiceData(result); // Pass the result object directly
+                });
+                // Append the button to the <a> tag
+                link.appendChild(button);
+
+                // Append the <a> tag to the card
+                card.appendChild(link);
                 resultsContainer.appendChild(card);
             });
         }

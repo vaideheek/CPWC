@@ -24,24 +24,16 @@
 
         <div class="booking-box">
             <h2 class="page-title">Book a Service</h2>
-            <img src="https://meglepkek.hu/uploads/images/_cache/orientalmasszazs_311b1b30c37f863481666c8395eaf63e.webp"
-                alt="Service Image" class="service-image">
+            <img src="media/avatar.jpeg" id="service-image" alt="Service Image" class="service-image">
             <div class="service-details">
-                <h3 class="service-name">Relaxing Spa Experience</h3>
-                <p class="service-description">Enjoy a luxurious spa session with aromatherapy and professional massage
-                    services, designed to rejuvenate your body and mind.</p>
-                <p><strong>Price:</strong> $120</p>
-                <p><strong>Date:</strong> December 1, 2024</p>
-                <p><strong>Time:</strong> 2:00 PM - 4:00 PM</p>
+                <h3 id="service-name" class="service-name"></h3>
+                <p id="service-description" class="service-description"></p>
+                <p><strong>Price:</strong> <span id="service-price"></span></p>
+                <p><strong>Date:</strong> <span id="service-date"></span></p>
+                <p><strong>Time:</strong> <span id="service-time"></span></p>
             </div>
-
-            <div class="provider-info">
-                <h4>Service Provider</h4>
-                <p><strong>Email:</strong> spa@relaxhub.com</p>
-                <p><strong>Phone:</strong> +1 123 456 7890</p>
-            </div>
-            <a href="/payment.html">
-                <button type="button" class="submit-btn">Book Now</button>
+            <a href="payment.html">
+                <button type="button" class="submit-btn">Proceed to payment</button>
             </a>
         </div>
     </main>
@@ -50,6 +42,19 @@
         <p>The HUB | <a href="faq.html">FAQs</a> | <a href="#">Terms and Conditions</a></p>
         <p>&copy; Copyright 2024 The HUB. All Rights Reserved</p>
     </footer>
+
+    <script>
+        // Retrieve the selected service data from localStorage
+        const service = JSON.parse(localStorage.getItem('selectedService'));
+
+        if (service) {
+            document.getElementById('service-name').textContent = service.Title;
+            document.getElementById('service-description').textContent = service.Description;
+            document.getElementById('service-price').textContent = `HUF ${service.Price}`; // Adjust if needed
+        } else {
+            alert('No service selected. Please select a service first.');
+        }
+    </script>
 </body>
 
 </html>
