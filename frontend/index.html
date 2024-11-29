@@ -30,24 +30,71 @@
                 <select class="location-options" id="location-options">
                     <option disabled selected value="">Choose a city</option>
                 </select>
-                <input type="date">
-                <a href="login.html">
-                    <button>Search</button>
-                </a>
+                <input type="date" id="date-input">
+                <button id="search-button">Search</button>
             </div>
         </section>
 
-        <!-- Services Section -->
-
         <section class="services">
-            <h2>Services we provide</h2>
-            <div class="service-cards" id="service-cards"></div>
+            <h2>Services We Provide</h2>
+            <div class="service-cards">
+                <!-- Static Service Card 1 -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="/CPWC/CPWC/frontend/media/moving.webp" alt="Moving" />
+                    </div>
+                    <div class="service-title">Moving</div>
+                </div>
+        
+                <!-- Static Service Card 2 -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="/CPWC/CPWC/frontend/media/carpentry.jpg" alt="Carpentry" />
+                    </div>
+                    <div class="service-title">Carpentry</div>
+                </div>
+        
+                <!-- Static Service Card 3 -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="/CPWC/CPWC/frontend/media/cleaning.jpg" alt="Cleaning" />
+                    </div>
+                    <div class="service-title">Cleaning</div>
+                </div>
+        
+                <!-- Static Service Card 4 -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="/CPWC/CPWC/frontend/media/window cleaning.png" alt="Window Cleaning" />
+                    </div>
+                    <div class="service-title">Window Cleaning</div>
+                </div>
+        
+                <!-- Static Service Card 5 -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="/CPWC/CPWC/frontend/media/laundry.jpg" alt="Laundry" />
+                    </div>
+                    <div class="service-title">Laundry</div>
+                </div>
+        
+                <!-- Static Service Card 6 -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="/CPWC/CPWC/frontend/media/cooking.webp" alt="Cooking" />
+                    </div>
+                    <div class="service-title">Cooking</div>
+                </div>
+            </div>
         </section>
 
-
-        <section class="services">
-            <div name="servives-provided" class="service-cards" id="service-cards-provided"></div>
+        <section>
+            <div id="search-results" style="display: none;">
+                <h2 id="search-service-title">Service Results</h2>
+                <div id="search-results-cards" id="search-results-cards"></div>
+            </div>
         </section>
+        
 
         <!-- Sign-Up Section -->
         <section class="signup-section">
@@ -58,14 +105,13 @@
 
     </main>
 
-    <!-- Placeholder for Footer -->
+    <!-- Footer -->
     <footer class="footer">
         <p>The HUB | <a href="faq.html">FAQs</a> | <a href="#">Terms and Conditions</a></p>
         <p>&copy; Copyright 2024 The HUB. All Rights Reserved</p>
     </footer>
 
-    <!-- JavaScript to dynamically load services from JSON -->
-    <!-- Link to external JavaScript file -->
+    <!-- Link to JavaScript file (if needed for other functionalities) -->
     <script src="js/script.js"></script>
 
 </body>
