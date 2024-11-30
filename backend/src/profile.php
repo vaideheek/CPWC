@@ -55,7 +55,7 @@ $conn->close();
 <body>
     <!-- Header -->
     <header class="header">
-        <a href="./">
+        <a href="/CPWC/CPWC/backend/src/signed_in_index.php">
             <h1 class="logo">THE HUB</h1>
         </a>
         <nav class="nav">
