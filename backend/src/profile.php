@@ -13,7 +13,7 @@ if (!isset($_SESSION['UserID'])) {
 
 // Get user data based on session
 $userID = $_SESSION['UserID'];
-$query = "SELECT Name, Email, Phone, Address FROM user WHERE UserID = ?";
+$query = "SELECT Name, Email, Phone, Address, Role FROM user WHERE UserID = ?";
 $stmt = $conn->prepare($query);
 $stmt->bind_param("i", $userID);
 $stmt->execute();
@@ -96,66 +96,42 @@ $conn->close();
                     <input type="text" id="address" name="address" value="<?php echo htmlspecialchars($userData['Address']); ?>" disabled>
                     
                     <button type="button" id="edit-btn">Edit</button>
-                    <button type="submit" id="save-btn" 
-                    style= "display:none; margin-top: 1rem; background-color: #2a2a72;
-                    color: #fff; border: none; padding: 0.75rem 1rem; border-radius: 5px;
-                    cursor: pointer; transition: background-color 0.3s;">Save</button>
+                    <button type="submit" id="save-btn" style="display:none; margin-top: 1rem; background-color: #2a2a72; color: #fff; border: none; padding: 0.75rem 1rem; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">Save</button>
                 </form>
-
-
             </div>
 
             <!-- Services -->
-             <!-- Services -->
-             <div class="profile-services">
+            <div class="profile-services">
                 <h3>My Services</h3>
                 <ul>
                     <?php foreach ($services as $service) : ?>
                         <li><?php echo htmlspecialchars($service['Title']) . " - " . htmlspecialchars($service['Description']); ?></li>
                     <?php endforeach; ?>
                 </ul>
-                <button id="add-service-btn" class="btn">Add New Service</button>
-                <div id="add-service-form-container" class="hidden">
-                    <form id="add-service-form">
-                        <label for="service-name">Service Name</label>
-                        <input type="text" id="service-name" name="service-name" placeholder="Enter service name"
-                            required>
-                        <label for="service-date">Date</label>
-                        <input type="date" id="service-date" name="service-date" required>
-                        <div class="file-upload-container">
-                            <label for="file-upload" class="custom-file-upload">
-                                Choose File
-                            </label>
-                            <input type="file" id="file-upload" />
-                        </div>
-                        <button type="submit" class="btn">Submit</button>
-                    </form>
-                </div>
+                <?php if ($userData['Role'] === 'Provider') : ?>
+                    <!-- Only show this button and form if the user is a Service Provider -->
+                    <button id="add-service-btn" class="btn">Add New Service</button>
+                    <div id="add-service-form-container" class="hidden">
+                        <form id="add-service-form">
+                            <label for="service-name">Service Name</label>
+                            <input type="text" id="service-name" name="service-name" placeholder="Enter service name" required>
+                            <label for="service-category">Category</label>
+                            <select id="service-category" name="category" required>
+                                <option value="carpentry">Carpentry</option>
+                                <option value="cleaning">Cleaning</option>
+                                <option value="cooking">Cooking</option>
+                                <option value="moving">Moving</option>
+                                <option value="laundry">Laundry</option>
+                                <option value="window cleaning">Window Cleaning</option>
+                                <option value="event planning">Event Planning</option>
+                            </select>
+                            <label for="service-date">Date</label>
+                            <input type="date" id="service-date" name="service-date" required>
+                            <button type="submit" class="btn">Submit</button>
+                        </form>
+                    </div>
+                <?php endif; ?>
             </div>
-
-            <!-- Services -->
-            <!-- <section class="services">
-                <h3>My Services</h3>
-                <div class="service-cards" id="service-cards"></div>
-                <button id="add-service-btn" class="btn">Add New Service</button>
-                <div id="add-service-form-container" class="hidden">
-                    <form id="add-service-form">
-                        <label for="service-name">Service Name</label>
-                        <input type="text" id="service-name" name="service-name" placeholder="Enter service name"
-                            required>
-                        <label for="service-date">Date</label>
-                        <input type="date" id="service-date" name="service-date" required>
-                        <div class="file-upload-container">
-                            <label for="file-upload" class="custom-file-upload">
-                                Choose File
-                            </label>
-                            <input type="file" id="file-upload" />
-                        </div>
-                        <button type="submit" class="btn">Submit</button>
-                    </form>
-                </div>
-            </section> -->
-
 
             <!-- Comments -->
             <div class="profile-comments">
@@ -179,4 +155,3 @@ $conn->close();
 </body>
 
 </html>
-
