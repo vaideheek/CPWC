@@ -82,17 +82,27 @@ $conn->close();
             <!-- Profile Information -->
             <div class="profile-info">
                 <h2>Profile Information</h2>
-                <form id="profile-form">
+                <form id="profile-form" method="POST" action="/CPWC/CPWC/backend/src/update_profile.php">
                     <label>Name</label>
-                    <input type="text" id="name" value="John Doe" disabled>
+                    <input type="text" id="name" name="name" value="<?php echo htmlspecialchars($userData['Name']); ?>" disabled>
+                    
                     <label>Email</label>
-                    <input type="email" id="email" value="john.doe@example.com" disabled>
+                    <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($userData['Email']); ?>" disabled>
+                    
                     <label>Phone</label>
-                    <input type="tel" id="phone" value="123-456-7890" disabled>
+                    <input type="tel" id="phone" name="phone" value="<?php echo htmlspecialchars($userData['Phone']); ?>" disabled>
+                    
                     <label>Address</label>
-                    <input type="text" id="address" value="1234 Street, City, Country" disabled>
+                    <input type="text" id="address" name="address" value="<?php echo htmlspecialchars($userData['Address']); ?>" disabled>
+                    
                     <button type="button" id="edit-btn">Edit</button>
+                    <button type="submit" id="save-btn" 
+                    style= "display:none; margin-top: 1rem; background-color: #2a2a72;
+                    color: #fff; border: none; padding: 0.75rem 1rem; border-radius: 5px;
+                    cursor: pointer; transition: background-color 0.3s;">Save</button>
                 </form>
+
+
             </div>
 
             <!-- Services -->
@@ -147,14 +157,13 @@ $conn->close();
             </section> -->
 
 
-
             <!-- Comments -->
             <div class="profile-comments">
                 <h3>User Comments</h3>
                 <ul>
-                    <li>"Great service!" - Alice</li>
-                    <li>"Very helpful and professional." - Bob</li>
-                    <li>"Highly recommended!" - Charlie</li>
+                    <?php foreach ($comments as $comment) : ?>
+                        <li>"<?php echo htmlspecialchars($comment['Feedback']); ?>"</li>
+                    <?php endforeach; ?>
                 </ul>
             </div>
         </div>

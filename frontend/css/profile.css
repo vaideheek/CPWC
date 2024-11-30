@@ -146,7 +146,7 @@ form input:disabled {
     color: #999;
 }
 
-#edit-btn,
+#edit-btn, #save-btn,
 #add-service-btn {
     margin-top: 1rem;
     background-color: #2a2a72;
@@ -158,7 +158,8 @@ form input:disabled {
     transition: background-color 0.3s;
 }
 
-#edit-btn:hover,
+#edit-btn:hover, 
+#save-btn:hover,
 #add-service-btn:hover {
     background-color: #ff5a5f;
 }
