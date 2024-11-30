@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Validate email format
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $_SESSION['error'] = "Invalid email format!";
-        header("Location: ../../frontend/login.html"); // Redirect back to login page
+        header("Location: /CPWC/CPWC/frontend/login.html"); // Redirect back to login page
         exit();
     }
 

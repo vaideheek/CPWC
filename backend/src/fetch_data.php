@@ -114,7 +114,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         // Include user's name and logout option
         $response['user'] = [
             'name' => $_SESSION['Name'],
-            'logout_url' => 'logout.php'
+            'logout_url' => '/CPWC/CPWC/backend/src/logout.php'
         ];
     }
 

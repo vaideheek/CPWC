@@ -94,7 +94,7 @@ async function searchServices() {
                 card.className = 'search-result-card';
                 card.innerHTML = `
                     <div class="search-result-image">
-                        <img src="media/avatar.jpeg" alt="${result.Title}" /> <!-- Placeholder for profile picture -->
+                        <img src="/CPWC/CPWC/frontend/media/avatar.jpeg" alt="${result.Title}" /> <!-- Placeholder for profile picture -->
                     </div>
                     <div class="search-result-details">
                         <h3 class="search-result-title">${result.Title}</h3>
@@ -109,7 +109,7 @@ async function searchServices() {
 
                 // Create the <a> tag
                 const link = document.createElement('a');
-                link.href = "booking.html";  // Or set this to the desired URL (e.g., 'booking.html')
+                link.href = "/CPWC/CPWC/frontend/booking.html";  // Or set this to the desired URL (e.g., 'booking.html')
 
                 button.addEventListener('click', () => {
                     saveServiceData(result); // Pass the result object directly

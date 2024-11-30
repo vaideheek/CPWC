@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 // Handle optional image
                 const imageElement = document.getElementById("service-image");
-                imageElement.src = data.ImagePath ? data.ImagePath : "media/avatar.jpeg";
+                imageElement.src = data.ImagePath ? data.ImagePath : "/CPWC/CPWC/frontend/media/avatar.jpeg";
             })
             .catch(error => {
                 console.error("Error fetching service data:", error);
