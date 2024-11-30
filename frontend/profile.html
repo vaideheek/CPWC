@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | The Hub</title>
+    <link rel="stylesheet" href="/CPWC/CPWC/frontend/css/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <a href="./">
+            <h1 class="logo">THE HUB</h1>
+        </a>
+        <nav class="nav">
+            <a href="/CPWC/CPWC/frontend/profile.html" class="nav-link active">Profile</a>
+            <a href="/CPWC/CPWC/frontend/logout.php" class="nav-link">Log Out</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="profile-box">
+            <!-- Profile Icon -->
+            <div class="profile-icon">
+                <img src="https://pbs.twimg.com/media/FjU2lkcWYAgNG6d.jpg" alt="User Icon">
+                <div class="rating">
+                    <i class="fa fa-star yellow"></i>
+                    <i class="fa fa-star yellow"></i>
+                    <i class="fa fa-star yellow"></i>
+                    <i class="fa fa-star yellow"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+            </div>
+
+            <!-- Profile Information -->
+            <div class="profile-info">
+                <h2>Profile Information</h2>
+                <form id="profile-form" method="POST" action="/CPWC/CPWC/backend/src/update_profile.php">
+                    <label>Name</label>
+                    <input type="text" id="name" name="name" value="<?php echo htmlspecialchars($userData['Name']); ?>" disabled>
+                    <label>Email</label>
+                    <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($userData['Email']); ?>" disabled>
+                    <label>Phone</label>
+                    <input type="tel" id="phone" name="phone" value="<?php echo htmlspecialchars($userData['Phone']); ?>" disabled>
+                    <label>Address</label>
+                    <input type="text" id="address" name="address" value="<?php echo htmlspecialchars($userData['Address']); ?>" disabled>
+                    <button type="button" id="edit-btn" onclick="enableEditing()">Edit</button>
+                    <button type="submit" id="save-btn" style="display:none;">Save</button>
+                </form>
+                
+            </div>
+
+            <!-- Services -->
+            <div class="profile-services">
+                <h3>My Services</h3>
+                <ul>
+                    <?php foreach ($services as $service) : ?>
+                        <li><?php echo htmlspecialchars($service['Title']) . " - " . htmlspecialchars($service['Description']); ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+
+            <!-- Comments -->
+            <div class="profile-comments">
+                <h3>User Comments</h3>
+                <ul>
+                    <?php foreach ($comments as $comment) : ?>
+                        <li>"<?php echo htmlspecialchars($comment['Feedback']); ?>"</li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>The HUB | <a href="faq.html">FAQs</a> | <a href="#">Terms and Conditions</a></p>
+        <p>&copy; Copyright 2024 The HUB. All Rights Reserved</p>
+    </footer>
+
+    <script src="js/profile.js"></script>
+</body>
+
+</html>

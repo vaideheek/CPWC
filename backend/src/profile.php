@@ -56,8 +56,8 @@ $conn->close();
     <header class="header">
         <a href="/CPWC/CPWC/backend/src/signed_in_index.php"><h1 class="logo">THE HUB</h1></a>
         <nav class="nav">
-            <a href="/CPWC/CPWC/frontend/profile.php" class="nav-link active">Profile</a>
-            <a href="/CPWC/CPWC/frontend/logout.php" class="nav-link">Log Out</a>
+            <a href="/CPWC/CPWC/backend/src/profile.php" class="nav-link active">Profile</a>
+            <a href="/CPWC/CPWC/backend/src/logout.php" class="nav-link">Log Out</a>
         </nav>
     </header>
 

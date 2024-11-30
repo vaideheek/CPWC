@@ -94,7 +94,7 @@ async function searchServices() {
                 card.className = 'search-result-card';
                 card.innerHTML = `
                     <div class="search-result-image">
-                        <img src="media/avatar.jpeg" alt="${result.Title}" /> <!-- Placeholder for profile picture -->
+                        <img src="/CPWC/CPWC/frontend/media/avatar.jpeg" alt="${result.Title}" /> <!-- Placeholder for profile picture -->
                     </div>
                     <div class="search-result-details">
                         <h3 class="search-result-title">${result.Title}</h3>
@@ -109,7 +109,7 @@ async function searchServices() {
 
                 // Create the <a> tag
                 const link = document.createElement('a');
-                link.href = "booking.html";  // Or set this to the desired URL (e.g., 'booking.html')
+                link.href = "/CPWC/CPWC/frontend/booking.html";  // Or set this to the desired URL (e.g., 'booking.html')
 
                 button.addEventListener('click', () => {
                     saveServiceData(result); // Pass the result object directly
@@ -139,3 +139,101 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add event listener for search functionality
     document.getElementById('search-button').addEventListener('click', searchServices);
 });
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Hub</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- Link to external CSS file -->
+</head>
+
+<body>
+
+    <!-- Placeholder for Header -->
+    <header class="header">
+        <h1 class="logo">THE HUB</h1>
+        <nav class="nav">
+            <a href="./login.html" class="nav-link">Log In</a>
+            <a href="./signup.html" class="nav-link">Sign Up</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Connecting you to professional service providers near you</h1>
+            <div class="search-bar">
+                <select class="service-options" id="service-options">
+                    <option disabled selected value="">Select a service</option>
+                </select>
+                <select class="location-options" id="location-options">
+                    <option disabled selected value="">Choose a city</option>
+                </select>
+                <input type="date" id="date-input">
+                <button id="search-button">Search</button>
+            </div>
+        </section>
+
+        <section class="services">
+            <h2>Services We Provide</h2>
+            <div class="service-cards">
+                <!-- Service Card 1 -->
+                <div class="service-card" data-category="Moving">
+                    <div class="service-image">
+                        <img src="/CPWC/CPWC/frontend/media/moving.webp" alt="Moving" />
+                    </div>
+                    <div class="service-title">Moving</div>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="service-card" data-category="Carpentry">
+                    <div class="service-image">
+                        <img src="/CPWC/CPWC/frontend/media/carpentry.jpg" alt="Carpentry" />
+                    </div>
+                    <div class="service-title">Carpentry</div>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="service-card" data-category="Cleaning">
+                    <div class="service-image">
+                        <img src="/CPWC/CPWC/frontend/media/cleaning.jpg" alt="Cleaning" />
+                    </div>
+                    <div class="service-title">Cleaning</div>
+                </div>
+
+                <!-- Add more service cards as needed -->
+            </div>
+        </section>
+
+        <section>
+            <div id="search-results" style="display: none;">
+                <h2 id="search-service-title">Service Results</h2>
+                <div id="search-results-cards"></div>
+            </div>
+        </section>
+
+        <!-- Sign-Up Section -->
+        <section class="signup-section">
+            <h3>Are You a Service Provider?</h3>
+            <p>Find out how The Hub can help your business.</p>
+            <a href="signup.html">Sign Up Today</a>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>The HUB | <a href="faq.html">FAQs</a> | <a href="#">Terms and Conditions</a></p>
+        <p>&copy; Copyright 2024 The HUB. All Rights Reserved</p>
+    </footer>
+
+    <!-- Link to JavaScript file (if needed for other functionalities) -->
+    <script src="js/script.js"></script>
+
+    
+
+</body>
+
+</html>
