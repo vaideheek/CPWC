@@ -53,10 +53,30 @@
             </div>
 
             <!-- Services -->
-            <div class="profile-services">
+            <!-- Services -->
+            <section class="services">
                 <h3>My Services</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
+                <div class="service-cards" id="service-cards"></div>
+                <button id="add-service-btn" class="btn">Add New Service</button>
+                <div id="add-service-form-container" class="hidden">
+                    <form id="add-service-form">
+                        <label for="service-name">Service Name</label>
+                        <input type="text" id="service-name" name="service-name" placeholder="Enter service name"
+                            required>
+                        <label for="service-date">Date</label>
+                        <input type="date" id="service-date" name="service-date" required>
+                        <div class="file-upload-container">
+                            <label for="file-upload" class="custom-file-upload">
+                                Choose File
+                            </label>
+                            <input type="file" id="file-upload" />
+                        </div>
+                        <button type="submit" class="btn">Submit</button>
+                    </form>
+                </div>
+            </section>
+
+
 
             <!-- Comments -->
             <div class="profile-comments">
