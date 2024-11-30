@@ -84,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         
             if (!empty($date)) {
                 // Add a condition for the date, ensuring there are no bookings for that day
-                $query .= " AND NOT EXISTS (SELECT 1 FROM booking b WHERE b.ServiceID = s.ServiceID AND b.ScheduledDate = '$date')";
+                $query .= " AND NOT EXISTS (SELECT * FROM booking b WHERE b.ServiceID = s.ServiceID AND b.ScheduledDate = '$date')";
             }
         
             $query .= " GROUP BY s.ServiceID";

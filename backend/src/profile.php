@@ -43,6 +43,7 @@ $conn->close();
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -54,10 +55,12 @@ $conn->close();
 <body>
     <!-- Header -->
     <header class="header">
-        <a href="/CPWC/CPWC/backend/src/signed_in_index.php"><h1 class="logo">THE HUB</h1></a>
+        <a href="./">
+            <h1 class="logo">THE HUB</h1>
+        </a>
         <nav class="nav">
-            <a href="/CPWC/CPWC/frontend/profile.php" class="nav-link active">Profile</a>
-            <a href="/CPWC/CPWC/frontend/logout.php" class="nav-link">Log Out</a>
+            <a href="/CPWC/CPWC/backend/src/profile.php" class="nav-link active">Profile</a>
+            <a href="/CPWC/CPWC/backend/src/logout.php" class="nav-link">Log Out</a>
         </nav>
     </header>
 
@@ -79,43 +82,79 @@ $conn->close();
             <!-- Profile Information -->
             <div class="profile-info">
                 <h2>Profile Information</h2>
-                <form id="profile-form" method="POST" action="/CPWC/CPWC/backend/src/update_profile.php">
+                <form id="profile-form">
                     <label>Name</label>
-                    <input type="text" id="name" name="name" value="<?php echo htmlspecialchars($userData['Name']); ?>" disabled>
-                    
+                    <input type="text" id="name" value="John Doe" disabled>
                     <label>Email</label>
-                    <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($userData['Email']); ?>" disabled>
-                    
+                    <input type="email" id="email" value="john.doe@example.com" disabled>
                     <label>Phone</label>
-                    <input type="tel" id="phone" name="phone" value="<?php echo htmlspecialchars($userData['Phone']); ?>" disabled>
-                    
+                    <input type="tel" id="phone" value="123-456-7890" disabled>
                     <label>Address</label>
-                    <input type="text" id="address" name="address" value="<?php echo htmlspecialchars($userData['Address']); ?>" disabled>
-                    
+                    <input type="text" id="address" value="1234 Street, City, Country" disabled>
                     <button type="button" id="edit-btn">Edit</button>
-                    <button type="submit" id="save-btn" style="display:none;">Save</button>
                 </form>
-
-
             </div>
 
             <!-- Services -->
-            <div class="profile-services">
+             <!-- Services -->
+             <div class="profile-services">
                 <h3>My Services</h3>
                 <ul>
                     <?php foreach ($services as $service) : ?>
                         <li><?php echo htmlspecialchars($service['Title']) . " - " . htmlspecialchars($service['Description']); ?></li>
                     <?php endforeach; ?>
                 </ul>
+                <button id="add-service-btn" class="btn">Add New Service</button>
+                <div id="add-service-form-container" class="hidden">
+                    <form id="add-service-form">
+                        <label for="service-name">Service Name</label>
+                        <input type="text" id="service-name" name="service-name" placeholder="Enter service name"
+                            required>
+                        <label for="service-date">Date</label>
+                        <input type="date" id="service-date" name="service-date" required>
+                        <div class="file-upload-container">
+                            <label for="file-upload" class="custom-file-upload">
+                                Choose File
+                            </label>
+                            <input type="file" id="file-upload" />
+                        </div>
+                        <button type="submit" class="btn">Submit</button>
+                    </form>
+                </div>
             </div>
+
+            <!-- Services -->
+            <!-- <section class="services">
+                <h3>My Services</h3>
+                <div class="service-cards" id="service-cards"></div>
+                <button id="add-service-btn" class="btn">Add New Service</button>
+                <div id="add-service-form-container" class="hidden">
+                    <form id="add-service-form">
+                        <label for="service-name">Service Name</label>
+                        <input type="text" id="service-name" name="service-name" placeholder="Enter service name"
+                            required>
+                        <label for="service-date">Date</label>
+                        <input type="date" id="service-date" name="service-date" required>
+                        <div class="file-upload-container">
+                            <label for="file-upload" class="custom-file-upload">
+                                Choose File
+                            </label>
+                            <input type="file" id="file-upload" />
+                        </div>
+                        <button type="submit" class="btn">Submit</button>
+                    </form>
+                </div>
+            </section> -->
+
+
 
             <!-- Comments -->
             <div class="profile-comments">
                 <h3>User Comments</h3>
                 <ul>
-                    <?php foreach ($comments as $comment) : ?>
-                        <li>"<?php echo htmlspecialchars($comment['Feedback']); ?>"</li>
-                    <?php endforeach; ?>
+                    <li>"Great service!" - Alice</li>
+                    <li>"Very helpful and professional." - Bob</li>
+                    <li>"Highly recommended!" - Charlie</li>
                 </ul>
             </div>
         </div>
@@ -123,7 +162,7 @@ $conn->close();
 
     <!-- Footer -->
     <footer class="footer">
-        <p>The HUB | <a href="faq.html">FAQs</a> | <a href="#">Terms and Conditions</a></p>
+        <p>The HUB | <a href="/CPWC/CPWC/frontend/faq.html" target="_blank">FAQs</a> | <a href="#">Terms and Conditions</a></p>
         <p>&copy; Copyright 2024 The HUB. All Rights Reserved</p>
     </footer>
 
@@ -131,3 +170,4 @@ $conn->close();
 </body>
 
 </html>
+

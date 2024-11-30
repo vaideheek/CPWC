@@ -59,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($stmt->execute()) {
         echo "Registration successful!";
         // Redirect to login page or index
-        header("Location: /CPWC/frontend/login.html"); // Change this to your login page
+        header("Location: /CPWC/CPWC/frontend/login.html"); // Change this to your login page
         exit();
     } else {
         echo "Error: " . $stmt->error;

@@ -11,17 +11,16 @@
 
 <body>
     <header class="header">
-        <a href="./">
+        <a href="/CPWC/CPWC/backend/src/signed_in_index.php">
             <h1 class="logo">THE HUB</h1>
         </a>
         <nav class="nav">
-            <a href="./profile.html" class="nav-link">Profile</a>
-            <a href="./logout.html" class="nav-link">Log Out</a>
+            <a href="/CPWC/CPWC/frontend/profile.html" class="nav-link">Profile</a>
+            <a href="/CPWC/CPWC/backend/src/logout.php" class="nav-link">Log Out</a>
         </nav>
     </header>
 
     <main class="container booking-container">
-
         <div class="booking-box">
             <h2 class="page-title">Book a Service</h2>
             <img src="media/avatar.jpeg" id="service-image" alt="Service Image" class="service-image">
@@ -43,18 +42,41 @@
         <p>&copy; Copyright 2024 The HUB. All Rights Reserved</p>
     </footer>
 
-    <script>
-        // Retrieve the selected service data from localStorage
-        const service = JSON.parse(localStorage.getItem('selectedService'));
-
-        if (service) {
-            document.getElementById('service-name').textContent = service.Title;
-            document.getElementById('service-description').textContent = service.Description;
-            document.getElementById('service-price').textContent = `HUF ${service.Price}`; // Adjust if needed
-        } else {
-            alert('No service selected. Please select a service first.');
-        }
-    </script>
+    <script src="/CPWC/CPWC/frontend/js/booking.js"></script>
 </body>
+
+<script>
+    // Retrieve the selected service data from localStorage
+    const service = JSON.parse(localStorage.getItem('selectedService'));
+
+    if (service) {
+        // Populate the service details in the UI
+        document.getElementById('service-name').textContent = service.Title;
+        document.getElementById('service-description').textContent = service.Description;
+        document.getElementById('service-price').textContent = `HUF ${service.Price}`; // Adjust if needed
+        document.getElementById('service-date').textContent = data.ScheduledDate;
+        document.getElementById('service-time').textContent = data.ScheduledTime;
+        // Set the serviceID for later use (if needed for a fetch request)
+        const serviceID = service.ServiceID;
+
+        /* // Use this serviceID to fetch additional booking details, if necessary
+        fetch('/CPWC/CPWC/backend/booking.php?serviceID=${serviceID}')
+            .then(response => response.json())
+            .then(data => {
+                // Display additional booking information (if any)
+                if (data.ScheduledDate && data.ScheduledTime) {
+                    document.getElementById('service-date').textContent = data.ScheduledDate;
+                    document.getElementById('service-time').textContent = data.ScheduledTime;
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching service data:', error);
+                alert('An error occurred while fetching service details.');
+            }); */
+
+    } else {
+        alert('No service selected. Please select a service first.');
+    }
+</script>
 
 </html>

@@ -1,125 +1,4 @@
-/* General styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f3f3f3;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-.container {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 2rem;
-}
-
-.profile-box {
-    background-color: #fff;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    width: 100%;
-    max-width: 800px;
-}
-
-.profile-icon {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 1.5rem;
-}
-
-.profile-icon img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    /* Ensures the image fills the circle */
-    border: 3px solid #2a2a72;
-}
-
-.rating {
-    margin-top: 0.5rem;
-}
-
-.rating .fa-star {
-    color: #ddd;
-    font-size: 1.5rem;
-}
-
-.rating .yellow {
-    color: #ffcc00;
-}
-
-.profile-info h2 {
-    color: #2a2a72;
-    margin-bottom: 1rem;
-    text-align: center;
-}
-
-form label {
-    display: block;
-    font-size: 0.9rem;
-    margin-top: 0.5rem;
-    color: #555;
-}
-
-form input {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-    margin-top: 0.25rem;
-    background-color: #f9f9f9;
-}
-
-form input:disabled {
-    color: #999;
-}
-
-#edit-btn {
-    margin-top: 1rem;
-    background-color: #2a2a72;
-    color: #fff;
-    border: none;
-    padding: 0.75rem 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-#edit-btn:hover {
-    background-color: #ff5a5f;
-}
-
-.profile-services,
-.profile-comments {
-    margin-top: 2rem;
-}
-
-.profile-services h3,
-.profile-comments h3 {
-    color: #2a2a72;
-    margin-bottom: 0.5rem;
-}
-
-.profile-comments ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.profile-comments li {
-    background-color: #f9f9f9;
-    margin: 0.5rem 0;
-    padding: 0.75rem;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-}
-
-/* General styles from your signup.css */
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -134,6 +13,16 @@ body {
     min-height: 100vh;
 }
 
+a {
+    text-decoration: none;
+}
+
+h3 {
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+
+/* Header */
 .header {
     display: flex;
     justify-content: space-between;
@@ -141,10 +30,6 @@ body {
     padding: 1rem 2rem;
     background-color: #fff;
     border-bottom: 1px solid #ddd;
-}
-
-a {
-    text-decoration: none;
 }
 
 .logo {
@@ -160,7 +45,6 @@ a {
 .nav-link {
     color: #555;
     margin-left: 1.5rem;
-    text-decoration: none;
     font-size: 1rem;
     position: relative;
     padding-bottom: 5px;
@@ -187,25 +71,217 @@ a {
     color: #2a2a72;
 }
 
+/* Main Container */
 .container {
     flex: 1;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     padding: 2rem;
 }
 
+/* Profile Box */
+.profile-box {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 800px;
+}
 
-h2 {
-    color: #2a2a72;
+.profile-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 1.5rem;
-    font-size: 1.75rem;
-    font-weight: 600;
+}
+
+.profile-icon img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #2a2a72;
+}
+
+.rating {
+    margin-top: 0.5rem;
+}
+
+.rating .fa-star {
+    color: #ddd;
+    font-size: 1.5rem;
+}
+
+.rating .yellow {
+    color: #ffcc00;
+}
+
+.profile-info h2 {
+    color: #2a2a72;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Forms */
+form label {
+    display: block;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    color: #555;
+}
+
+form input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-top: 0.25rem;
+    background-color: #f9f9f9;
+}
+
+form input:disabled {
+    color: #999;
+}
+
+#edit-btn,
+#add-service-btn {
+    margin-top: 1rem;
+    background-color: #2a2a72;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#edit-btn:hover,
+#add-service-btn:hover {
+    background-color: #ff5a5f;
+}
+
+/* Add Service Form */
+#add-service-form-container {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+#add-service-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#add-service-form input {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* File Upload Styling */
+.file-upload-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.custom-file-upload {
+    background-color: #2a2a72;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.custom-file-upload:hover {
+    background-color: #ff5a5f;
+}
+
+/* Hide the original file input */
+input[type="file"] {
+    display: none;
+}
+
+#file-name {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.btn {
+
+    margin-top: 1rem;
+    background-color: #2a2a72;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #ff5a5f;
 }
 
 
+/* Services */
+.service-cards {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+}
 
+.service-card {
+    flex: 0 0 auto;
+    width: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #e0e0e0;
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
 
+.service-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.service-card-title {
+    padding: 1rem;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Comments */
+.profile-comments ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.profile-comments li {
+    background-color: #f9f9f9;
+    margin: 0.5rem 0;
+    padding: 0.75rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+/* Footer */
 .footer {
     background-color: #091540;
     padding: 1rem;
@@ -221,6 +297,12 @@ h2 {
     margin: 0 0.5rem;
 }
 
+/* Utility Classes */
+.hidden {
+    display: none;
+}
+
+/* Media Queries */
 @media (max-width: 500px) {
     .form-box {
         padding: 1rem;

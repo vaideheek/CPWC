@@ -2,7 +2,6 @@
 // Include database connection
 include '../db_connect.php';
 
-// Start session to store user info upon successful login
 session_start();
 
 // Check if the form is submitted
@@ -34,23 +33,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (password_verify($password, $user['Password'])) {
             // Password is correct, start a session and store user info
             $_SESSION['UserID'] = $user['UserID'];
-            $_SESSION['Name'] = $user['Name'];
+            $_SESSION['Email'] = $user['Email'];
             $_SESSION['Role'] = $user['Role'];
 
             // Redirect to the homepage or dashboard
-            header("Location: /CPWC/CPWC/frontend/index.html"); // Corrected path to the homepage
+            header("Location: /CPWC/CPWC/backend/src/signed_in_index.php"); // Corrected path to the homepage
             exit();
         } else {
             // Incorrect password
             $_SESSION['error'] = "Invalid password!";
-            alert('Please select a service, location, and date.');
             header("Location: /CPWC/CPWC/frontend/login.html"); // Redirect back to login page
             exit();
         }
     } else {
         // Email not found
         $_SESSION['error'] = "No user found with that email address!";
-        header("Location: /CPWC/CPWC/frontend/index.html"); // Redirect back to login page
+        header("Location: /CPWC/CPWC/frontend/login.html"); // Redirect back to login page
         exit();
     }
 
